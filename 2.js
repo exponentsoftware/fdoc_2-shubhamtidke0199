@@ -62,6 +62,29 @@ const users = [
     console.log(greaterThan85(users))
 
 
+// 2. function which addUser to the user array only if the user does not exist.
+    
+ function addUser(user){
+    let name = user.name
+    let existingUsers = []
+    
+    for(let i=0; i<users.length; i++){
+        existingUsers.push(users[i].name)
+       }
+   
+       if(existingUsers.includes(name)){
+           return `User "${name}" already exists`
+       }
+       else{
+           users.push(user)
+           return `User added`
+       }
+       
+   }
+   
+   let newuser = { name:'Martha', age:18}
+   console.log(addUser(newuser))
+   
     
     
  
