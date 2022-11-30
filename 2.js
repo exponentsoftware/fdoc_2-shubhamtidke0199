@@ -86,7 +86,7 @@ const users = [
    console.log(addUser(newuser))
    
 
-//  function which addUserSkill which can add skill to a user only if the user exist.
+// 3. function which addUserSkill which can add skill to a user only if the user exist.
 
    function addSkill(user,skill){
     let existingUsers = []
@@ -109,4 +109,26 @@ const users = [
   console.log(addSkill("Martha", "React"))
   console.log(users)
     
+
+// 4. function which editUser if the user exist in the users array.
  
+  function editUser(oldUserName,newUserName){
+    let existingUsers = []
+    let userIndex 
+  
+    for(let i=0; i<users.length; i++){
+      existingUsers.push(users[i].name)
+    }
+    
+    if(existingUsers.includes(oldUserName)){
+       userIndex =  existingUsers.indexOf(oldUserName)
+       users[userIndex].name = newUserName
+       return `Username updated` 
+    }
+    else{
+      return `User does not exist`
+    }
+  }
+  
+  console.log(editUser("Martha", "Marshall"))
+  console.log(users)
