@@ -85,6 +85,28 @@ const users = [
    let newuser = { name:'Martha', age:18}
    console.log(addUser(newuser))
    
+
+//  function which addUserSkill which can add skill to a user only if the user exist.
+
+   function addSkill(user,skill){
+    let existingUsers = []
+    let userIndex 
+  
+    for(let i=0; i<users.length; i++){
+      existingUsers.push(users[i].name)
+    }
     
+    if(existingUsers.includes(user)){
+       userIndex =  existingUsers.indexOf(user)
+       users[userIndex].skills.push(skill)
+       return `Skill added` 
+    }
+    else{
+      return `User does not exist`
+    }
+  }
+  
+  console.log(addSkill("Martha", "React"))
+  console.log(users)
     
  
